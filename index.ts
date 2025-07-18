@@ -131,8 +131,8 @@ export interface Native {
   updateAndRestart: () => Promise<void>
   updateReady: () => Promise<void>
   toggleDiscordDetails: (enabled: boolean) => Promise<void>
-  setMediaSession: (metadata: SessionMetadata, mediaId: number) => Promise<void>
-  setPositionState: (state?: MediaPositionState) => Promise<void>
+  setMediaSession: (metadata: SessionMetadata, mediaId: number, duration: number) => Promise<void>
+  setPositionState: (state: MediaPositionState, paused: 'none' | 'paused' | 'playing') => Promise<void>
   setPlayBackState: (paused: 'none' | 'paused' | 'playing') => Promise<void>
   setActionHandler: (action: MediaSessionAction | 'enterpictureinpicture', handler: MediaSessionActionHandler | null) => void
   checkAvailableSpace: (_?: unknown) => Promise<number>
