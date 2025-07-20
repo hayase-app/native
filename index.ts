@@ -121,7 +121,7 @@ export interface Native {
   focus: () => Promise<void>
   close: () => Promise<void>
   selectPlayer: () => Promise<string>
-  selectDownload: () => Promise<string>
+  selectDownload: (type?: 'cache' | 'internal' | 'sdcard') => Promise<string>
   setAngle: (angle: string) => Promise<void>
   getLogs: () => Promise<string>
   getDeviceInfo: () => Promise<unknown>
