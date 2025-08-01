@@ -171,4 +171,5 @@ export interface Native {
   navigate: (cb: (data: { target: string, value: string | undefined }) => void) => Promise<void>
   defaultTransparency: () => boolean
   debug: (levels: string) => Promise<void>
+  profile: (seconds: number) => Promise<void>
 }
