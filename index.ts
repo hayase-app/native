@@ -139,6 +139,8 @@ export interface Native {
   checkIncomingConnections: (port: number) => Promise<boolean>
   updatePeerCounts: (hashes: string[]) => Promise<Array<{ hash: string, complete: string, downloaded: string, incomplete: string }>>
   playTorrent: (id: string, mediaID: number, episode: number) => Promise<TorrentFile[]>
+  deleteTorrents: (hashes: string[]) => Promise<void>
+  rescanTorrents: (hashes: string[]) => Promise<void>
   library: () => Promise<LibraryEntry[]>
   attachments: (hash: string, id: number) => Promise<Attachment[]>
   tracks: (hash: string, id: number) => Promise<Array<{ number: string, language?: string, type: string, header?: string, name?: string }>>
