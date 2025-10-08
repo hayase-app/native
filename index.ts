@@ -161,7 +161,7 @@ export interface Native {
   }>
   setDOH: (dns: string) => Promise<void>
   cachedTorrents: () => Promise<string[]>
-  createNZB: (id: string, url: string, domain: string, port: number | string, login: string, password: string, poolSize: number) => Promise<void>
+  createNZB: (id: string, url: string, domain: string, port: string, login: string, password: string, poolSize: number) => Promise<void>
   downloadProgress: (percent: number) => Promise<void>
   updateSettings: (settings: TorrentSettings) => Promise<void>
   updateProgress: (cb: (progress: number) => void) => Promise<void>
