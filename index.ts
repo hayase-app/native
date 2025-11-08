@@ -160,6 +160,7 @@ export interface Native {
     streaming: boolean
   }>
   setDOH: (dns: string) => Promise<void>
+  updateToNewEndpoint: (endpoint: string) => Promise<void>
   cachedTorrents: () => Promise<string[]>
   createNZB: (id: string, url: string, domain: string, port: number, login: string, password: string, poolSize: number) => Promise<void>
   downloadProgress: (percent: number) => Promise<void>
