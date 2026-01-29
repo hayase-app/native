@@ -17,5 +17,8 @@
 		"**/*.js",
 		"**/*.d.ts",
 		"**/*.js.map"
-	]
+	],
+	"dependencies": {
+		"@types/chromecast-caf-receiver": "^6.0.25"
+	}
 }

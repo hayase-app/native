@@ -1,3 +1,5 @@
+import type { MediaInformation } from 'chromecast-caf-receiver/cast.framework.messages'
+
 export interface AuthResponse {
   access_token: string
   expires_in: string // seconds
@@ -20,6 +22,7 @@ export interface TorrentFile {
   size: number
   path: string
   url: string
+  lan: string
   id: number
 }
 
@@ -163,6 +166,9 @@ export interface Native {
   updateToNewEndpoint: (endpoint: string) => Promise<void>
   cachedTorrents: () => Promise<string[]>
   createNZB: (id: string, url: string, domain: string, port: number, login: string, password: string, poolSize: number) => Promise<void>
+  getDisplays: (cb: (displays: Array<{ friendlyName: string, host: string }>) => void) => Promise<void>
+  castPlay: (host: string, hash: string, id: number, media: MediaInformation) => Promise<void>
+  castClose: (host: string) => Promise<void>
   downloadProgress: (percent: number) => Promise<void>
   updateSettings: (settings: TorrentSettings) => Promise<void>
   updateProgress: (cb: (progress: number) => void) => Promise<void>

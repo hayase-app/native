@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@types/chromecast-caf-receiver':
+        specifier: ^6.0.25
+        version: 6.0.25
     devDependencies:
       eslint-config-standard-universal:
         specifier: ^1.0.8
@@ -116,6 +120,9 @@ packages:
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=9.0.0'
+
+  '@types/chromecast-caf-receiver@6.0.25':
+    resolution: {integrity: sha512-76M/NBSEK+2Lc5FCzeUQYnGtn0wK+aBgDjT4JFKhpAOACeM/eoSnKMuND3SQ/ND1vcGgCc6QauNEfXozQOq7Lg==}
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
@@ -1291,6 +1298,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
       - typescript
+
+  '@types/chromecast-caf-receiver@6.0.25': {}
 
   '@types/estree@1.0.8': {}
 
