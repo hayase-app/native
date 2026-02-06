@@ -134,6 +134,7 @@ export interface Native {
   updateAndRestart: () => Promise<void>
   updateReady: () => Promise<void>
   toggleDiscordDetails: (enabled: boolean) => Promise<void>
+  enableCORS: (urls: string[]) => Promise<void>
   setMediaSession: (metadata: SessionMetadata, mediaId: number, duration: number) => Promise<void>
   setPositionState: (state: MediaPositionState, paused: 'none' | 'paused' | 'playing') => Promise<void>
   setPlayBackState: (paused: 'none' | 'paused' | 'playing') => Promise<void>
