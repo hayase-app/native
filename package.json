@@ -6,7 +6,7 @@
 	"main": "index.ts",
 	"version": "1.0.0",
 	"devDependencies": {
-		"eslint-config-standard-universal": "^1.0.8",
+		"eslint-config-standard-universal": "^1.0.9",
 		"typescript": "^5.8.3"
 	},
 	"scripts": {
@@ -19,6 +19,6 @@
 		"**/*.js.map"
 	],
 	"dependencies": {
-		"@types/chromecast-caf-receiver": "^6.0.25"
+		"@types/chromecast-caf-receiver": "^6.0.26"
 	}
 }
