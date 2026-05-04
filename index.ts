@@ -155,6 +155,7 @@ export interface Native {
   torrentInfo: (hash: string) => Promise<TorrentInfo>
   peerInfo: (hash: string) => Promise<PeerInfo[]>
   fileInfo: (hash: string) => Promise<FileInfo[]>
+  trackers: (hash: string) => Promise<Record<string, { complete: number, downloaded: number, incomplete: number, failed: boolean }>>
   protocolStatus: (hash: string) => Promise<{
     dht: boolean
     lsd: boolean
