@@ -85,7 +85,7 @@ export interface FileInfo {
   selections: number
 }
 
-export interface TorrentSettings {
+export interface ClientSettings {
   torrentPersist: boolean
   torrentDHT: boolean
   torrentStreamedDownload: boolean
@@ -94,6 +94,11 @@ export interface TorrentSettings {
   torrentPort: number
   dhtPort: number
   torrentPeX: boolean
+  nzbDomain: string
+  nzbLogin: string
+  nzbPassword: string
+  nzbPort: number
+  nzbPoolSize: number
 }
 
 export interface LibraryEntry {
@@ -168,12 +173,12 @@ export interface Native {
   setDOH: (dns: string) => Promise<void>
   updateToNewEndpoint: (endpoint: string) => Promise<void>
   cachedTorrents: () => Promise<string[]>
-  createNZB: (id: string, url: string, domain: string, port: number, login: string, password: string, poolSize: number) => Promise<void>
+  createNZB: (hash: string, url: string) => Promise<void>
   getDisplays: (cb: (displays: Array<{ friendlyName: string, host: string }>) => void) => Promise<void>
   castPlay: (host: string, hash: string, id: number, media: MediaInformation) => Promise<void>
   castClose: (host: string) => Promise<void>
   downloadProgress: (percent: number) => Promise<void>
-  updateSettings: (settings: TorrentSettings) => Promise<void>
+  updateSettings: (settings: ClientSettings) => Promise<void>
   updateProgress: (cb: (progress: number) => void) => Promise<void>
   spawnPlayer: (url: string) => Promise<void>
   setHideToTray: (enabled: boolean) => Promise<void>
