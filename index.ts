@@ -118,6 +118,17 @@ export interface SessionMetadata {
   image: string
 }
 
+export interface SubtitleTrack {
+  number: string
+  language: string
+  type: string
+  _compressed: boolean
+  default: boolean
+  forced: boolean
+  name?: string
+  header?: string
+}
+
 export interface Native {
   authAL: (url: string) => Promise<AuthResponse>
   authMAL: (url: string) => Promise<{ code: string, state: string }>
@@ -153,7 +164,7 @@ export interface Native {
   rescanTorrents: (hashes: string[]) => Promise<void>
   library: () => Promise<LibraryEntry[]>
   attachments: (hash: string, id: number) => Promise<Attachment[]>
-  tracks: (hash: string, id: number) => Promise<Array<{ number: string, language?: string, type: string, header?: string, name?: string }>>
+  tracks: (hash: string, id: number) => Promise<SubtitleTrack[]>
   subtitles: (hash: string, id: number, cb: (subtitle: { text: string, time: number, duration: number }, trackNumber: number) => void) => Promise<void>
   errors: (cb: (error: Error) => void) => Promise<void>
   chapters: (hash: string, id: number) => Promise<Array<{ start: number, end: number, text: string }>>
