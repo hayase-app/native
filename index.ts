@@ -202,4 +202,5 @@ export interface Native {
   defaultTransparency: () => boolean
   debug: (levels: string) => Promise<void>
   profile: (seconds: number) => Promise<void>
+  accentColor: () => Promise<string>
 }
