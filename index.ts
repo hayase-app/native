@@ -185,7 +185,7 @@ export interface Native {
   updateToNewEndpoint: (endpoint: string) => Promise<void>
   cachedTorrents: () => Promise<string[]>
   createNZB: (hash: string, url: string) => Promise<void>
-  createHTTPWebSeed: (id: string, url: string, authorization?: string, fileIndex?: number) => Promise<void>
+  createHTTPWebSeed: (id: string, url: string, authorization?: string, fileIndex?: number, rateLimit?: number) => Promise<void>
   getDisplays: (cb: (displays: Array<{ friendlyName: string, host: string }>) => void) => Promise<void>
   castPlay: (host: string, hash: string, id: number, media: MediaInformation) => Promise<void>
   castClose: (host: string) => Promise<void>
