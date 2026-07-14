@@ -129,6 +129,14 @@ export interface SubtitleTrack {
   header?: string
 }
 
+export interface PluginInfo {
+  id: string
+  name: string
+  version: string
+  description: string
+  permissions: string[]
+}
+
 export interface Native {
   authAL: (url: string) => Promise<AuthResponse>
   authMAL: (url: string) => Promise<{ code: string, state: string }>
@@ -204,4 +212,8 @@ export interface Native {
   debug: (levels: string) => Promise<void>
   profile: (seconds: number) => Promise<void>
   accentColor: () => Promise<string>
+  pluginList: () => Promise<PluginInfo[]>
+  pluginPopup: (pluginId: string) => Promise<void>
+  pluginImport: (id?: string) => Promise<PluginInfo>
+  pluginDelete: (id: string) => Promise<void>
 }
