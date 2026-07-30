@@ -119,7 +119,7 @@ export interface SessionMetadata {
 }
 
 export interface SubtitleTrack {
-  number: string
+  number: number
   language: string
   type: string
   _compressed: boolean
