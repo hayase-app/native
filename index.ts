@@ -192,6 +192,7 @@ export interface Native {
   setDOH: (dns: string) => Promise<void>
   updateToNewEndpoint: (endpoint: string) => Promise<void>
   cachedTorrents: () => Promise<string[]>
+  activeTorrents: () => Promise<TorrentInfo[]>
   createNZB: (hash: string, url: string) => Promise<void>
   createHTTPWebSeed: (id: string, url: string, authorization?: string, fileIndex?: number, rateLimit?: number) => Promise<void>
   getDisplays: (cb: (displays: Array<{ friendlyName: string, host: string }>) => void) => Promise<void>
