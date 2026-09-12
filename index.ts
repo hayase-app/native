@@ -169,6 +169,7 @@ export interface Native {
   updatePeerCounts: (hashes: string[]) => Promise<Array<{ hash: string, complete: string, downloaded: string, incomplete: string }>>
   addTorrent: (id: string | ArrayBufferView, mediaID: number, episode: number, background: boolean) => Promise<TorrentFile[]>
   deleteTorrents: (hashes: string[]) => Promise<void>
+  removeBackgroundTorrents: (hashes: string[]) => Promise<void>
   rescanTorrents: (hashes: string[]) => Promise<void>
   library: () => Promise<LibraryEntry[]>
   attachments: (hash: string, id: number) => Promise<Attachment[]>
