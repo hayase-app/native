@@ -90,6 +90,7 @@ export interface ClientSettings {
   torrentDHT: boolean
   torrentStreamedDownload: boolean
   torrentSpeed: number
+  connectionBudget: number
   maxConns: number
   torrentPort: number
   dhtPort: number
