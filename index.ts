@@ -100,7 +100,7 @@ export interface ClientSettings {
   nzbPassword: string
   nzbPort: number
   nzbPoolSize: number
-  remoteAccess: boolean
+  remoteAccess: 'off' | 'local' | 'localAndRemote'
 }
 
 export interface LibraryEntry {
