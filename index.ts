@@ -209,7 +209,7 @@ export interface Native {
   setExperimentalGPU: (enabled: boolean) => Promise<void>
   transparency: (enabled: boolean) => Promise<void>
   setZoom: (scale: number) => Promise<void>
-  isApp: boolean
+  isApp: 'electron' | 'mobile' | 'browser'
   version: () => Promise<string>
   navigate: (cb: (data: { target: string, value: string | undefined }) => void) => Promise<void>
   defaultTransparency: () => boolean
